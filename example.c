@@ -35,13 +35,13 @@ int main() {
   // stext = strlen(from);
 
   printf("init encryption...");
-  // ecr = init_encrypt(*key, skey);
+  // ecr = rc4init(*key, skey);
 
   printf("done\n");
 
   printf("%s \n->" , from);
 
-  // encrypted = arc_encrypt((int8 *)from, stext);
+  // encrypted = rc4encrypt((int8 *)from, stext);
   printbin((int8 *)key, skey);
 
   return 0;
