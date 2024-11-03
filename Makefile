@@ -1,4 +1,4 @@
-all: encrypt example
+all: arcfour example
 
 example: example.o
 	gcc example.o -o example -O2 -Wall
@@ -6,11 +6,11 @@ example: example.o
 example.o: example.c
 	gcc -c -O2 -Wall example.c
 
-encrypt: encrypt.o
-	gcc encrypt.o -o encrypt.so -O2 -Wall -fPIC -shared -ldl -D_GNU_SOURCE
+arcfour: arcfour.o
+	gcc arcfour.o -o arcfour.so -O2 -Wall -fPIC -shared -ldl -D_GNU_SOURCE
 
-encrypt.o: encrypt.c
-	gcc -c -O2 -Wall encrypt.c
+arcfour.o: arcfour.c
+	gcc -c -O2 -Wall arcfour.c
 
 clean:
 	rm -rf *.o *.so example
